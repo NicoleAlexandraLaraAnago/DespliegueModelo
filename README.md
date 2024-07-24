@@ -23,28 +23,28 @@ Para ejecutar el proyecto, asegúrate de tener instalados los siguientes paquete
 
 Puedes instalar estos paquetes usando `pip`. Asegúrate de estar en el entorno adecuado y ejecuta:
 
-```bash
+```bash```
 pip install pandas numpy scikit-learn matplotlib seaborn jupyter
 
-## Configuración
+## Requisitos
 1. **Clona el repositorio**:
 
    Abre tu terminal y ejecuta el siguiente comando para clonar el repositorio:
 
-   ```bash
+   ```bash```
    git clone https://github.com/NicoleAlexandraLaraAnago/DespliegueModelo.git
 
 2. **Navega al directorio del proyecto**:
 
   Cambia al directorio del proyecto con:
 
-   ```bash
+   ```bash```
   cd DespliegueModelo
 3. **Instala las dependencias:**:
 
   Asegúrate de tener pip instalado y luego instala las dependencias necesarias con:
 
-   ```bash
+   ```bash```
  pip install -r requirements.txt
 
 
@@ -54,7 +54,7 @@ Coloca el archivo data_evaluacion.csv en el directorio data/.
 
 Ejecuta el script para preparar y limpiar los datos:
 
-   ```bash
+   ```bash```
   python scripts/preprocess_data.py
 
 
@@ -62,7 +62,7 @@ Ejecuta el script para preparar y limpiar los datos:
 
   Para entrenar y evaluar los modelos, usa el siguiente comando:
 
-   ```bash
+   ```bash```
  python scripts/run_models.py
 
 6. **Revisa los resultados:**:
@@ -74,7 +74,7 @@ Los resultados y métricas se guardarán en el directorio results/. Revisa estos
 
 Para desplegar el modelo con mejor rendimiento, ejecuta el script de despliegue:
 
-   ```bash
+   ```bash```
   python scripts/deploy_model.py
 
 
@@ -82,7 +82,7 @@ Para desplegar el modelo con mejor rendimiento, ejecuta el script de despliegue:
 
 Si deseas explorar los resultados en Jupyter Notebooks, asegúrate de tener Jupyter instalado y luego corre:
 
-   ```bash
+   ```bash```
  jupyter notebook
 
 
