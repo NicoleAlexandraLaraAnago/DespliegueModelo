@@ -71,8 +71,8 @@ Los resultados y métricas se guardarán en el directorio results/. Revisa estos
 7. **Despliega el modelo:**:
 
 Para desplegar el modelo con mejor rendimiento, ejecuta el script de despliegue:
-
-   ``` python scripts/RNA.ipynb```
+abrir la carpeta ModeloDespliegue y digitar:
+   ``` python app.py```
  
 
 
