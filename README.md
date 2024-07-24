@@ -52,7 +52,7 @@ Coloca el archivo data_evaluacion.csv en el directorio data/.
 
 Ejecuta el script para preparar y limpiar los datos:
 
-   ``` python scripts/preprocess_data.py```
+   ``` python scripts/app.py```
  
 
 
@@ -60,7 +60,7 @@ Ejecuta el script para preparar y limpiar los datos:
 
   Para entrenar y evaluar los modelos, usa el siguiente comando:
 
-   ```python scripts/run_models.py```
+   ```python scripts/RNA.ipynb```
  
 
 6. **Revisa los resultados:**:
@@ -72,15 +72,9 @@ Los resultados y métricas se guardarán en el directorio results/. Revisa estos
 
 Para desplegar el modelo con mejor rendimiento, ejecuta el script de despliegue:
 
-   ``` python scripts/deploy_model.py```
+   ``` python scripts/RNA.ipynb```
  
 
-
-8. **Ejecuta los notebooks (opcional):**:
-
-Si deseas explorar los resultados en Jupyter Notebooks, asegúrate de tener Jupyter instalado y luego corre:
-
-   ``` jupyter notebook```
 
 
 
