@@ -25,3 +25,6 @@ Puedes instalar estos paquetes usando `pip`. Asegúrate de estar en el entorno a
 
 ```bash
 pip install pandas numpy scikit-learn matplotlib seaborn jupyter
+
+## Configuración
+
