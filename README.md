@@ -23,23 +23,24 @@ Para ejecutar el proyecto, asegúrate de tener instalados los siguientes paquete
 
 Puedes instalar estos paquetes usando `pip`. Asegúrate de estar en el entorno adecuado y ejecuta:
 
-```bash```
-pip install pandas numpy scikit-learn matplotlib seaborn jupyter
+`bash
+pip install pandas numpy scikit-learn matplotlib seaborn jupyter`
 
 ## Requisitos
 1. **Clona el repositorio**:
 
    Abre tu terminal y ejecuta el siguiente comando para clonar el repositorio:
 
-   ```bash```
-   git clone https://github.com/NicoleAlexandraLaraAnago/DespliegueModelo.git
+   `bash
+   git clone https://github.com/NicoleAlexandraLaraAnago/DespliegueModelo.git `
 
 2. **Navega al directorio del proyecto**:
 
   Cambia al directorio del proyecto con:
 
-   ```bash```
-  cd DespliegueModelo
+   `bash
+  cd DespliegueModelo`
+  
 3. **Instala las dependencias:**:
 
   Asegúrate de tener pip instalado y luego instala las dependencias necesarias con:
