@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelo de Predicción de Salario</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 80vh;
+        overflow: auto;
+      }
+
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        box-sizing: border-box;
+        overflow: auto;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        margin-bottom: 10px;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        width: calc(100% - 16px);
+      }
+
+      input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 12px;
+        font-size: 14px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      #result {
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Predicción de Salario</h1>
+      <form id="predictionForm">
+        <!-- Campos del formulario -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required />
+
+        <label for="hoursPerWeek">HoursPerWeek:</label>
+        <input type="number" id="hoursPerWeek" name="HoursPerWeek" required />
+
+        <label for="educationLevel">EducationLevel:</label>
+        <input
+          type="number"
+          id="educationLevel"
+          name="EducationLevel"
+          required
+        />
+
+        <label for="postalCode">PostalCode:</label>
+        <input type="number" id="postalCode" name="PostalCode" required />
+
+        <label for="indicator">Indicator:</label>
+        <input type="number" id="indicator" name="Indicator" required />
+
+        <label for="maxHours">MaxHours:</label>
+        <input type="number" id="maxHours" name="MaxHours" required />
+
+        <label for="stateGov">State-gov:</label>
+        <input type="text" id="stateGov" name="State-gov" required />
+
+        <label for="bachelors">Bachelors:</label>
+        <input type="text" id="bachelors" name="Bachelors" required />
+
+        <label for="neverMarried">Never-married:</label>
+        <input type="text" id="neverMarried" name="Never-married" required />
+
+        <label for="admClerical">Adm-clerical:</label>
+        <input type="text" id="admClerical" name="Adm-clerical" required />
+
+        <label for="notInFamily">Not-in-family:</label>
+        <input type="text" id="notInFamily" name="Not-in-family" required />
+
+        <label for="white">White:</label>
+        <input type="text" id="white" name="White" required />
+
+        <label for="male">Male:</label>
+        <input type="text" id="male" name="Male" required />
+
+        <label for="unitedStates">United-States:</label>
+        <input type="text" id="unitedStates" name="United-States" required />
+
+        <input type="submit" value="Predecir" />
+      </form>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      document.getElementById("predictionForm").onsubmit = async function (
+        event
+      ) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        const data = {};
+        formData.forEach((value, key) => {
+          data[key] = value;
+        });
+
+        try {
+          const response = await fetch("/predict", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+
+          const result = await response.json();
+          document.getElementById("result").innerText =
+            result.result || result.error || "Error desconocido";
+        } catch (error) {
+          document.getElementById(
+            "result"
+          ).innerText = `Error: ${error.message}`;
+        }
+      };
+    </script>
+  </body>
+</html>
